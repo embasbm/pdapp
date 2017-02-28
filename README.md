@@ -27,3 +27,15 @@ The task is to create a ruby script that collects data from Google Play store fo
 * Develop the project using the best software development practices - Quality of the code is the key.
 * Provide any additional setup instructions in github readme.
 ￼
+## Usage to set up the solution
+1. $ git clone git@github.com:embasbm/pdapp.git
+2. $ cd pdapp
+3. $ vagrant up
+4. $ vagrant ssh-config >> ~/.ssh/config
+5. Edit **~/.ssh/config**, change *Host default* to *Host vagrant*
+6. $ bundle exec cap production deploy
+7. $ vagrant ssh
+            A. $ cd apps/current
+            B. $ rbenv rehash
+            C. $ bundle
+8. $ bin/rails server -b 0.0.0.0
