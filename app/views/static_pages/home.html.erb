@@ -1,0 +1,19 @@
+<div class="panel-body">
+  <%= form_tag data_path, multipart: true do %>
+  <div class="panel-group" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab">
+          <h4 class="panel-title">
+            <label for="file">File to Upload</label>
+          </h4>
+        </div>
+        <div role="tabpanel" aria-labelledby="headingItem">
+          <div class="panel-body">
+            <h5><%= file_field_tag "file" %></h5>
+            <%= submit_tag 'Import Data', class: 'btn-success btn' %>
+          </div>
+        </div>
+      </div>
+  </div>
+  <% end %>
+</div>
