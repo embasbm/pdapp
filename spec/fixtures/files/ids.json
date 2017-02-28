@@ -1,0 +1,7 @@
+{
+  "mobile_apps": [
+    {"id" : "com.ea.gp.fifamobile"},
+    {"id" : "com.supersport.android.phone"},
+    {"id" : "com.japanesesport.football"}
+  ]
+}
