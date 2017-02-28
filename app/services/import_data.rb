@@ -7,12 +7,8 @@ class ImportData
 
   def read_attached_file
     @imported_data = []
-    data_hash   =
-      if @file.class == ActionDispatch::Http::UploadedFile
-        JSON.parse(File.read(@file.tempfile))
-      else
-        JSON.parse(File.read(@file))
-      end
+    data_hash = read_file_content
+    return "Error reading #{@file}" if data_hash.empty?
     data_hash["mobile_apps"].each do |app|
       begin
         page        = Nokogiri::HTML(RestClient.get("http://play.google.com/store/apps/details?id=#{app['id']}"))
@@ -23,6 +19,21 @@ class ImportData
         Rails.logger.error "Error importing App: #{app['id']}"
       end
     end
+  end
+
+  def read_file_content
+    data_hash = []
+    begin
+      data_hash =
+        if @file.class == ActionDispatch::Http::UploadedFile
+          JSON.parse(File.read(@file.tempfile))
+        else
+          JSON.parse(File.read(@file))
+        end
+    rescue => e
+      Rails.logger.error "Error reading file #{@file} content"
+    end
+    data_hash
   end
 
   def create_json_file
