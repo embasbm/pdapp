@@ -14,8 +14,6 @@ SITE
     mingw (1.2.5)
       compat_resource (>= 12.16.3)
       seven_zip (>= 0.0.0)
-    mysql (5.5.3)
-      yum-mysql-community (>= 0.0.0)
     nodejs (3.0.0)
       apt (>= 2.9.1)
       ark (>= 0.0.0)
@@ -32,8 +30,6 @@ SITE
       ohai (>= 4.0.0)
     yum-epel (2.1.1)
       compat_resource (>= 12.16.3)
-    yum-mysql-community (2.0.3)
-      compat_resource (>= 12.16.3)
 
 GIT
   remote: https://github.com/aminin/chef-rbenv
@@ -45,7 +41,6 @@ GIT
 DEPENDENCIES
   apt (>= 0)
   build-essential (>= 0)
-  mysql (= 5.5.3)
   nodejs (>= 0)
   rbenv (>= 0)
   ruby_build (>= 0)
