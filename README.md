@@ -15,16 +15,14 @@ $ bundle exec cap production deploy
 $ vagrant ssh
   * A. $ cd apps/current
   * B. $ rbenv rehash
-  * C. $ bundle
-  * D. $ rspec
-  * E. $ bundle exec rake scrape:app_data spec/fixtures/files/ids.json
+  * C. $ gem install bundler
+  * D. $ bundle
+  * E. $ rspec
+  # Rake Task: a file **public/scraped_data.json** which contains fetched data about apps.
+  * F. $ bundle exec rake scrape:app_data spec/fixtures/files/ids.json
+  # Rails app: http://localhost:3000 should be available on browser.
+  * G. $ bundle exec rails server -b 0.0.0.0
 ```
-This will create a file **public/scraped_data.json** which contains fetched data about apps.
-```
-  * F. $ bundle exec rails server -b 0.0.0.0
-```
-[rails app](http://localhost:3000) should be available on browser.
-
 
 ## Task
 The task is to create a ruby script that collects data from Google Play store for a small subset of apps with ability to deploy the script to locally running Vagrant box.
