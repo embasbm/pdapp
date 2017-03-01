@@ -14,10 +14,10 @@ $ bundle exec cap production deploy
 # 7. Connect to Vagrant
 $ vagrant ssh
   * A. $ cd apps/current
-  * B. $ rbenv rehash
-  * C. $ gem install bundler
+  * B. $ gem install bundler
+  * C. $ rbenv rehash
   * D. $ bundle
-  * E. $ rspec
+  * E. $ bundle exec rspec
   # Rake Task: a file **public/scraped_data.json** which contains fetched data about apps.
   * F. $ bundle exec rake scrape:app_data spec/fixtures/files/ids.json
   # Rails app: http://localhost:3000 should be available on browser.
